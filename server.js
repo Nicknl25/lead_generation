@@ -28,8 +28,8 @@ app.post('/api/ai-test', async (req, res) => {
         const response = await openai.chat.completions.create({
             model: "gpt-4",
             messages: [{ role: "user", content: prompt }],
-            temperature: 0.7,
-            max_tokens: 50
+            temperature: 0.7, // Adjust temperature for creativity
+            max_tokens: 1000
         });
 
         res.json({ response: response.choices[0].message.content });
